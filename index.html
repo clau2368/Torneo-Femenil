@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Femenil Deportivo Vivanco</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+<header>
+    <h1>Torneo Femenil Deportivo Vivanco</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#inscripcion">Inscripción</a></li>
+            <li><a href="#reglamento">Reglamento</a></li>
+
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="home">
+        <h2>¡Bienvenido al torneo!</h2>
+        <p>Inscríbete ahora y sé parte de la acción</p>
+        <img src="img/fut%20femenil.jpg" alt="femenil">
+    </section>
+    <section id="inscripcion">
+        <h2>Inscripción</h2>
+        <form id="formularioInscripcion">
+            <label for="nombreEquipo">Nombre del equipo:</label>
+            <input type="text" id="nombreEquipo" name="nombreEquipo" required><br>
+
+            <label for="capitan">Nombre del capitán:</label>
+            <input type="text" id="capitan" name="capitan" required><br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script>
+        const formulario = document.getElementById('formularioInscripcion');
+
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+
+            // Aquí puedes agregar el código para enviar los datos al servidor
+            formulario.reset();
+            alert('¡Inscripción exitosa!');
+        });
+    </script>
+    <section id="reglamento">
+        <a href="reglamento.html">Ver Reglamento</a>
+    </section>
+    <a href="registro.html"  class="btn-registrar-jugadoras">Registrar Jugadoras</a>
+
+</main>
+<footer>
+    <p>&copy; 2025 Torneo Femenil Deportivo Vivanco</p>
+</footer>
+<script src="index.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBFWbmYVF7OUkPHJv6jGQwmYCpnfuHoS0s",
+        authDomain: "registro-de-jugadoras.firebaseapp.com",
+        projectId: "registro-de-jugadoras",
+        storageBucket: "registro-de-jugadoras.firebasestorage.app",
+        messagingSenderId: "50987856005",
+        appId: "1:50987856005:web:1d2de5437519a86b6379ec",
+        measurementId: "G-9JD6MFQFKX"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
